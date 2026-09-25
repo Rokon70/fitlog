@@ -17,8 +17,25 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-hairline bg-ink/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-shell items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header
+      className="sticky top-0 z-50 overflow-hidden border-b border-hairline bg-ink/95 backdrop-blur"
+      style={{
+        backgroundImage:
+          "radial-gradient(rgba(163,230,53,0.05) 1px, transparent 1px)",
+        backgroundSize: "3px 3px",
+      }}
+    >
+      <div className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-30 blur-3xl"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(163,230,53,0.4) 0%, rgba(163,230,53,0) 70%)",
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto flex h-16 max-w-shell items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex shrink-0 items-center gap-2">
           <img src="/logo.png" alt="FitLog logo" className="h-6 w-6" />
           <span className="font-display text-lg font-bold tracking-wide text-bone">
@@ -29,7 +46,9 @@ export default function Navbar() {
         <nav className="hidden items-center gap-1 md:flex">
           {links.map((link) => {
             const active =
-              link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
             return (
               <Link
                 key={link.href}
@@ -77,10 +96,12 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-1 border-t border-hairline bg-ink px-4 py-3 md:hidden">
+        <nav className="relative z-10 flex flex-col gap-1 border-t border-hairline bg-ink px-4 py-3 md:hidden">
           {links.map((link) => {
             const active =
-              link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
             return (
               <Link
                 key={link.href}
