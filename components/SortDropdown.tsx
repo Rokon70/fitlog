@@ -18,14 +18,12 @@ export default function SortDropdown({
 }) {
   return (
     <label className="relative inline-flex items-center gap-2 text-sm text-mute">
-      <span className="font-display text-xs font-semibold uppercase tracking-wider">
-        Sort By
-      </span>
+      <span>Sort By</span>
       <span className="relative">
         <select
           value={value}
           onChange={(e) => onChange(e.target.value as SortKey)}
-          className="appearance-none rounded-card border border-hairline bg-surface py-2 pl-3 pr-8 font-display text-xs font-semibold uppercase tracking-wider text-bone outline-none transition focus:border-accent"
+          className="appearance-none rounded-full border border-hairline bg-surface py-2 pl-3 pr-8 text-sm text-bone outline-none transition focus:border-accent"
         >
           {options.map((opt) => (
             <option key={opt.key} value={opt.key}>

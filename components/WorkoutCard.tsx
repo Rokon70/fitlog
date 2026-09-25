@@ -6,7 +6,7 @@ export default function WorkoutCard({ workout }: { workout: Workout }) {
   return (
     <Link
       href={`/workout/${workout.id}`}
-      className="group flex flex-col overflow-hidden rounded-card border border-hairline bg-surface transition hover:border-accent/60"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-hairline/60 bg-surface transition hover:border-accent/50"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-surface-2">
         <img
@@ -22,7 +22,7 @@ export default function WorkoutCard({ workout }: { workout: Workout }) {
           {workout.muscleGroups.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-hairline px-2 py-0.5 font-display text-[10px] font-semibold uppercase tracking-wider text-mute"
+              className="rounded-full bg-accent px-2.5 py-0.5 font-display text-[10px] font-semibold uppercase tracking-wide text-ink"
             >
               {tag}
             </span>

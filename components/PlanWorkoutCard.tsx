@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Clock, Flame, Star, CheckCircle2, X } from "lucide-react";
+import { Clock, Flame, Star, Check, X } from "lucide-react";
 import { Workout } from "@/lib/types";
 
 export default function PlanWorkoutCard({
@@ -18,8 +18,8 @@ export default function PlanWorkoutCard({
   showDone?: boolean;
 }) {
   return (
-    <div className="flex flex-col gap-4 rounded-card border border-hairline bg-surface p-4 sm:flex-row sm:items-center">
-      <div className="h-20 w-20 shrink-0 overflow-hidden rounded-card bg-surface-2">
+    <div className="flex flex-col gap-4 rounded-2xl border border-hairline bg-surface p-4 sm:flex-row sm:items-center">
+      <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-surface-2">
         <img
           src={workout.image}
           alt={workout.name}
@@ -27,7 +27,7 @@ export default function PlanWorkoutCard({
         />
       </div>
 
-      <div className="flex-1 min-w-0">
+      <div className="min-w-0 flex-1">
         <h3
           className={`font-display text-base font-semibold uppercase tracking-wide ${
             done ? "text-mute line-through" : "text-bone"
@@ -35,7 +35,7 @@ export default function PlanWorkoutCard({
         >
           {workout.name}
         </h3>
-        <p className="mt-1 text-xs text-mute">{workout.equipment}</p>
+        <p className="mt-0.5 text-xs text-mute">{workout.equipment}</p>
         <div className="mt-2 flex items-center gap-4 text-xs text-mute">
           <span className="flex items-center gap-1">
             <Clock className="h-3.5 w-3.5 text-accent" />
@@ -55,7 +55,7 @@ export default function PlanWorkoutCard({
       <div className="flex items-center gap-2 sm:shrink-0">
         <Link
           href={`/workout/${workout.id}`}
-          className="rounded-card border border-hairline px-3 py-2 font-display text-xs font-semibold uppercase tracking-wider text-bone transition hover:border-accent hover:text-accent"
+          className="rounded-full border border-hairline px-4 py-2 text-sm font-medium text-bone transition hover:border-accent hover:text-accent"
         >
           View Details
         </Link>
@@ -63,21 +63,21 @@ export default function PlanWorkoutCard({
           <button
             type="button"
             onClick={onToggleDone}
-            aria-label="Mark as done"
-            className={`flex h-9 w-9 items-center justify-center rounded-card border transition ${
+            className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition ${
               done
-                ? "border-accent bg-accent text-ink"
-                : "border-hairline text-mute hover:border-accent hover:text-accent"
+                ? "bg-surface-3 text-mute"
+                : "bg-accent text-ink hover:bg-accent-dim"
             }`}
           >
-            <CheckCircle2 className="h-4 w-4" />
+            <Check className="h-4 w-4" />
+            Mark as Done
           </button>
         )}
         <button
           type="button"
           onClick={onRemove}
           aria-label="Remove"
-          className="flex h-9 w-9 items-center justify-center rounded-card border border-hairline text-mute transition hover:border-red-400 hover:text-red-400"
+          className="flex h-8 w-8 items-center justify-center text-mute transition hover:text-red-400"
         >
           <X className="h-4 w-4" />
         </button>
