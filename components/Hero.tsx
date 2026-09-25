@@ -1,5 +1,3 @@
-import CyclingAnimation from "./CyclingAnimation";
-
 export default function Hero() {
   return (
     <section className="mx-auto max-w-shell px-4 pt-8 sm:px-6 lg:px-8">
@@ -24,7 +22,11 @@ export default function Hero() {
         </div>
 
         <div className="hidden justify-self-center lg:flex lg:justify-end">
-          <CyclingAnimation />
+          <img
+            src="/cycling.webp"
+            alt="Illustration of an athlete on an assault bike"
+            className="h-72 w-auto object-contain xl:h-80"
+          />
         </div>
       </div>
     </section>
