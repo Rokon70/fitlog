@@ -1,3 +1,5 @@
+import CyclingAnimation from "./CyclingAnimation";
+
 export default function Hero() {
   return (
     <section className="mx-auto max-w-shell px-4 pt-8 sm:px-6 lg:px-8">
@@ -22,11 +24,7 @@ export default function Hero() {
         </div>
 
         <div className="hidden justify-self-center lg:flex lg:justify-end">
-          <img
-            src="https://img.magnific.com/free-photo/portrait-anime-character-doing-fitness-exercising_23-2151666704.jpg?w=740"
-            alt="Illustration of an athlete mid-lift"
-            className="h-72 w-72 rounded-2xl object-cover opacity-95 xl:h-80 xl:w-80"
-          />
+          <CyclingAnimation />
         </div>
       </div>
     </section>
