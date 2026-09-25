@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Dumbbell, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useApp } from "./AppProvider";
 
@@ -20,7 +20,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-hairline bg-ink/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-shell items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex shrink-0 items-center gap-2">
-          <Dumbbell className="h-5 w-5 text-accent" strokeWidth={2.5} />
+          <img src="/logo.png" alt="FitLog logo" className="h-6 w-6" />
           <span className="font-display text-lg font-bold tracking-wide text-bone">
             FITLOG
           </span>
