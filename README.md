@@ -5,6 +5,10 @@ twelve lifts, open a lift to see full instructions and specs, lock lifts into
 today's plan or save them for later, and track a live daily summary — all
 persisted so your plan survives a reload.
 
+## 🌐 Live Demo
+
+[View Live Website](https://fitlog-dusky.vercel.app/)
+
 ## Description
 
 FitLog pulls its workout data from a live REST API and presents it as a
@@ -45,32 +49,6 @@ done or remove them, split across "Today's Plan" and "Saved" tabs.
 6. **Custom 404 page and graceful loading/empty states** — an on-brand 404
    for unknown routes, a loading animation while the library fetches, and an
    empty state with a call to action when the plan or saved list is empty.
-
-## Getting started
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-### Build
-
-```bash
-npm run build
-npm run start
-```
-
-## Deployment
-
-This project deploys as-is to Vercel, Netlify, or Cloudflare Pages:
-
-1. Push this repo to GitHub.
-2. Import it in Vercel (or your platform of choice).
-3. Framework preset: **Next.js**. No environment variables are required —
-   the workout API is public.
-4. Deploy.
 
 ## Project structure
 
